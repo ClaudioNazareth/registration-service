@@ -103,29 +103,11 @@ You can also test the application at : https://registration-service.herokuapp.co
      and for creation of new resources is returned ** in the header the link to the resource created **.
 
 
-# Architecture tools and frameworks used
-
-## Formatter
-
-The code was formatted using [Google Format](https://github.com/google/google-java-format)
-
-
-## APIs - Swagger
-
-To document the APIs I used Swagger.
-
-Swagger is the world’s largest framework of API developer tools for the OpenAPI Specification(OAS),
-enabling development across the entire API lifecycle, from design and documentation, 
-to test and deployment.
-
-Here you can read more about [Swagger](https://swagger.io/)
-
-To **see and test** the APIs go to path **/swagger-ui.html** (ex: _http://localhost:8080/swagger-ui.html_)
-
+# Architecture, tools and frameworks used
 
 ##Clean Architecture and Clean Code
 
-#### Clean Code
+### Clean Code
 
 Clean Code is a development style that focuses on the **ease of writing, reading and maintaining code**.
 
@@ -145,7 +127,7 @@ For this project I've used some clean code principles like :
   * _Comment what is needed and only what is necessary. Codes are constantly modified, while comments rarely. 
     Thus, it is common for a comment to cease to have meaning, or worse, to pass on a false meaning after some time_.    
 
-#### Clean Architecture
+### Clean Architecture
 
 For this application I choose to use **Clean Architecture**
 
@@ -168,6 +150,22 @@ Clean Architecture was published, this was the diagram used to explain the globa
 complexity is Domain Driven Design (DDD). Domain Driven Design advocates modeling based on the 
 reality of business as relevant to our use cases._** 
 
+## Formatter
+
+The code was formatted using [Google Format](https://github.com/google/google-java-format)
+
+
+## APIs - Swagger
+
+To document the APIs I used Swagger.
+
+Swagger is the world’s largest framework of API developer tools for the OpenAPI Specification(OAS),
+enabling development across the entire API lifecycle, from design and documentation, 
+to test and deployment.
+
+Here you can read more about [Swagger](https://swagger.io/)
+
+To **see and test** the APIs go to path **/swagger-ui.html** (ex: _http://localhost:8080/swagger-ui.html_)
 
 ## UNDERTONW
 Undertow is a web server designed to be used for both blocking and non-blocking tasks. 
@@ -186,12 +184,6 @@ See more at In the [undertow](http://undertow.io/)
 Fixture Factory is a tool to help developers quickly build and organize fake objects for unit tests. 
 The key idea is to create specification limits of the data (templates) instead of hardcoded data. 
 Try using F-F, then you can focus on the behavior of your methods and we manage the data.
-
-  * High Performance
-  * Embeddable
-  * Servlet 3.1
-  * Web Sockets
-  * Reverse Proxy
 
 See more at [Fixture Factory](https://github.com/six2six/fixture-factory)
 
