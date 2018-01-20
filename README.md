@@ -2,7 +2,7 @@
 
 Click the badges below to see build and coverage information
 
-[![Build Status](https://travis-ci.org/ClaudioNazareth/address-parser.svg?branch=master)](https://travis-ci.org/ClaudioNazareth/address-parser)
+[![Build Status](https://travis-ci.org/ClaudioNazareth/registration-service.svg?branch=master)](https://travis-ci.org/ClaudioNazareth/registration-service)
 [![codecov](https://codecov.io/gh/ClaudioNazareth/address-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/ClaudioNazareth/address-parser)
 
 
@@ -11,6 +11,7 @@ Click the badges below to see build and coverage information
 ![server](https://img.shields.io/badge/server-undertow-yellow.svg)
 ![swagger](https://img.shields.io/badge/swagger-2.7.0-green.svg)
 ![googleformater](https://img.shields.io/badge/google%20format-1.5-blue.svg)
+![springSecurity](https://img.shields.io/badge/spring-security-1.5.9-orange.svg)
 
 
 Scenario for this application
