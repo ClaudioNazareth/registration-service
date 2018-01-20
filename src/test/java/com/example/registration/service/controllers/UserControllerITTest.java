@@ -30,7 +30,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class UserControllerIT {
+public class UserControllerITTest {
 
   @Autowired private UserController userController;
 
