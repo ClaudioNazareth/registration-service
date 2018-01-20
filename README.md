@@ -60,7 +60,7 @@ To start the application use the command bellow
 mvn spring-boot:run
 ```
 
-##### I disabled the spring security basic authentication for this test.
+###### I disabled the spring security basic authentication for this test.
 
 **The base path for the endpoins is**: /api/v1
   -For this application we have:  **/v1/users/register** 
