@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+#------------------------ SPRING DATA MONGO -------------------------------#
+spring:
+  data:
+    mongodb:
+      port: 12345
+
+log4j:
+  category:
+    org:
+      springframework:
+        data:
+          mongodb: DEBUG
+  appender:
+    stdout:
+      layout:
+        ConversionPattern: '%d{ABSOLUTE} %5p %40.40c:%4L - %m%n'
+
+
+#------------------------ LOGGING ------------------------------------------#
+logging:
+  file: registration-service.log
+
+#------------------------ Spring security ----------------------------------#
+security.basic.enabled: false # Security was disabled for this test
