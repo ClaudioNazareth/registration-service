@@ -63,15 +63,13 @@ mvn spring-boot:run
 ###### I disabled the spring security basic authentication for this test.
 
 **The base path for the endpoins is**: /api/v1
-  -For this application we have:  **/v1/users/register** 
+  - For this application we have:  **/v1/users/register** 
  
-I prefer the approach  **post** to **/api/users** but was asked in the test that the endpoint 
-should be **register**  
-
-
-#### Tests
+###### I prefer the approach  **post** to **/api/users** but was asked in the test that the endpoint should be **register**  
 
 **Application port** :8080  
+
+#### Tests
 
 To run all unit and integration tests use the command bellow   
 
