@@ -11,8 +11,8 @@ Click the badges below to see build and coverage information
 ![server](https://img.shields.io/badge/server-undertow-yellow.svg)
 ![swagger](https://img.shields.io/badge/swagger-2.7.0-green.svg)
 ![googleformater](https://img.shields.io/badge/google%20format-1.5-blue.svg)
-![springSecurity](https://img.shields.io/badge/spring-security-1.5.9-orange.svg)
-![fixturefactory](https://img.shields.io/badge/fixture-factory-3.1.10-yellowgreen.svg)
+![springsecurity](https://img.shields.io/badge/spring%20security-1.5.9-orange.svg)
+![fixturefactory](https://img.shields.io/badge/fixture%20factory-3.1.10-yellowgreen.svg)
 ![pitest](https://img.shields.io/badge/pitest-1.3.1-yellow.svg)
 
 
@@ -50,7 +50,9 @@ To compile and run this project you will need:
 
 I have some Gradle projects as you can see in my Github, but some services I've used in this project 
 do not work very well yet with gradle. So for this test I chose maven.
-  
+
+
+##### Start and endpoints   
  
 To start the application use the command bellow   
 
@@ -58,13 +60,16 @@ To start the application use the command bellow
 mvn spring-boot:run
 ```
 
-**I disabled the spring security basic authentication for this test.**
+##### I disabled the spring security basic authentication for this test.
 
 **The base path for the endpoins is**: /api/v1
   -For this application we have:  **/v1/users/register** 
  
-I prefer the approach do **post** to **/api/users** but was asked in the test that the endpoint 
+I prefer the approach  **post** to **/api/users** but was asked in the test that the endpoint 
 should be **register**  
+
+
+#### Tests
 
 **Application port** :8080  
 
@@ -79,11 +84,11 @@ mvn verify
 ```bash
 mvn org.pitest:pitest-maven:mutationCoverage
 ```  
-
 **This will output an html report to target/pit-reports/YYYYMMDDHHMI.**
 
 You can also test the application at : https://registration-service.herokuapp.com/swagger-ui.html
 
+#### Data base
 
 - The application contains a built-in ** MongoDB ** database that is initialized along with application    
     - Port to access MongoDB: **12345**
