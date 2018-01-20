@@ -3,7 +3,7 @@
 Click the badges below to see build and coverage information
 
 [![Build Status](https://travis-ci.org/ClaudioNazareth/registration-service.svg?branch=master)](https://travis-ci.org/ClaudioNazareth/registration-service)
-[![codecov](https://codecov.io/gh/ClaudioNazareth/address-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/ClaudioNazareth/address-parser)
+[![codecov](https://codecov.io/gh/ClaudioNazareth/registration-service/branch/master/graph/badge.svg)](https://codecov.io/gh/ClaudioNazareth/registration-service)
 
 
 ![javaversion](https://img.shields.io/badge/Java-8-yellowgreen.svg)
@@ -12,7 +12,11 @@ Click the badges below to see build and coverage information
 ![swagger](https://img.shields.io/badge/swagger-2.7.0-green.svg)
 ![googleformater](https://img.shields.io/badge/google%20format-1.5-blue.svg)
 ![springSecurity](https://img.shields.io/badge/spring-security-1.5.9-orange.svg)
+![fixturefactory](https://img.shields.io/badge/fixture-factory-3.1.10-yellowgreen.svg)
+![pitest](https://img.shields.io/badge/pitest-1.3.1-yellow.svg)
 
+
+- _Technical information about the project is after the description_
 
 Scenario for this application
 
@@ -32,16 +36,20 @@ implemented but can be stubbed out/ faked.
   
 If you have any doubts about the project, please feel free to contact me at chtnazareth@gmail.com
 
+The Use Case(Class) that do the job is **RegisterUser** method **register**  
 
-The Use Case(Class) that do the job is **ParseAddress** method **execute**  
   
-Instructions
-============
+## Instructions
   
 To compile and run this project you will need:
 
   * **Java 8** (JDK8)
   * **Maven 3.0.5** or grater
+  
+#### Why Maven and not Gradle ?  
+
+I have some Gradle projects as you can see in my Github, but some services I've used in this project 
+do not work very well yet with gradle. So for this test I chose maven.
   
  
 To start the application use the command bellow   
@@ -49,18 +57,24 @@ To start the application use the command bellow
 ```bash
 mvn spring-boot:run
 ```
-**The base path for the endpoins is**: /v1
-  -For this application we have:  **/v1/address-parser/parse** 
+
+**I disabled the spring security basic authentication for this test.**
+
+**The base path for the endpoins is**: /api/v1
+  -For this application we have:  **/v1/users/register** 
+ 
+I prefer the approach do **post** to **/api/users** but was asked in the test that the endpoint 
+should be **register**  
 
 **Application port** :8080  
 
 To run all unit and integration tests use the command bellow   
 
 ```bash
-mvn test
+mvn verify
 ```  
 
-**To run mutation tests use the command bellow - MUST RUN AFTER mvn test**  
+**To run mutation tests use the command bellow - MUST RUN AFTER mvn test or verify**  
 
 ```bash
 mvn org.pitest:pitest-maven:mutationCoverage
@@ -68,19 +82,30 @@ mvn org.pitest:pitest-maven:mutationCoverage
 
 **This will output an html report to target/pit-reports/YYYYMMDDHHMI.**
 
+You can also test the application at : https://registration-service.herokuapp.com/swagger-ui.html
 
 
-You can also test the application at : https://nazareth-address-parser.herokuapp.com/swagger-ui.html
+- The application contains a built-in ** MongoDB ** database that is initialized along with application    
+    - Port to access MongoDB: **12345**
+    
+- To see the log, see the ** registration-service.log ** file created at the root of the application.
+
+- For the resources exposed I have used the following:
+    - **200 OK** - to **GET** requests.
+    - **201 Created** - to **POST**.
+    - **204 No Content** - to **PUT**, **PATCH**, e **DELETE** requests.
+    - I used some principles of ** HATEOAS ** for the API in which each resource has ** self link ** 
+     and for creation of new resources is returned ** in the header the link to the resource created **.
 
 
+# Architecture tools and frameworks used
 
-Formatter
-==============
+## Formatter
+
 The code was formatted using [Google Format](https://github.com/google/google-java-format)
 
 
-APIs - Swagger
-==============
+## APIs - Swagger
 
 To document the APIs I used Swagger.
 
@@ -93,9 +118,7 @@ Here you can read more about [Swagger](https://swagger.io/)
 To **see and test** the APIs go to path **/swagger-ui.html** (ex: _http://localhost:8080/swagger-ui.html_)
 
 
-
-Clean Architecture and Clean Code
-==============
+##Clean Architecture and Clean Code
 
 #### Clean Code
 
@@ -139,3 +162,39 @@ Clean Architecture was published, this was the diagram used to explain the globa
 **_The best of clean architecture is its use an software design technique to understand and solve 
 complexity is Domain Driven Design (DDD). Domain Driven Design advocates modeling based on the 
 reality of business as relevant to our use cases._** 
+
+
+## UNDERTONW
+Undertow is a web server designed to be used for both blocking and non-blocking tasks. 
+Some of its main features are:
+
+  * High Performance
+  * Embeddable
+  * Servlet 3.1
+  * Web Sockets
+  * Reverse Proxy
+
+See more at In the [undertow](http://undertow.io/)
+
+
+## Fixture Factory
+Fixture Factory is a tool to help developers quickly build and organize fake objects for unit tests. 
+The key idea is to create specification limits of the data (templates) instead of hardcoded data. 
+Try using F-F, then you can focus on the behavior of your methods and we manage the data.
+
+  * High Performance
+  * Embeddable
+  * Servlet 3.1
+  * Web Sockets
+  * Reverse Proxy
+
+See more at [Fixture Factory](https://github.com/six2six/fixture-factory)
+
+
+## MongoDB
+MongoDB is the database for today’s applications: innovative, fast time-to-market, globally scalable, 
+reliable, and inexpensive to operate. With MongoDB, you can build applications that were never
+possible with traditional relational databases.
+
+
+See more at [MongoDB](https://www.mongodb.com/collateral/mongodb-architecture-guide)
