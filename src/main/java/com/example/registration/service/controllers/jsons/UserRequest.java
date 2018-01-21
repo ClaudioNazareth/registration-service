@@ -22,21 +22,35 @@ public class UserRequest {
 
   @NotNull
   @Pattern(regexp = USER_NAME_REGEX, message = USER_NAME_VALIDATION_MESSAGE)
-  @ApiModelProperty(value = "Username", dataType = "string", required = true)
+  @ApiModelProperty(
+    value = "Username (alphanumerical, no spaces)",
+    dataType = "string",
+    required = true,
+    notes = "alphanumerical, no spaces",
+    example = "gamesys"
+  )
   private String username;
 
   @NotNull
   @Pattern(regexp = PASSWORD_REGEX, message = PASSWORD_VALIDATION_MESSAGE)
-  @ApiModelProperty(value = "Password", dataType = "string", required = true)
+  @ApiModelProperty(
+    value =
+        "Password (at least four characters, at least one upper case character, at least one number)",
+    dataType = "string",
+    required = true,
+    notes = "at least four characters, at least one upper case character, at least one number",
+    example = "Gamesys1"
+  )
   private String password;
 
   @NotNull
   @JsonDeserialize(using = LocalDateDeserializer.class)
   @ApiModelProperty(
-    value = "User's date of birth",
+    value = "User's date of birth (ISO 8601)",
     dataType = "Date",
     required = true,
-    example = "1983-05-24"
+    example = "1983-05-24",
+    notes = "ISO 8601"
   )
   private LocalDate dateOfBirth;
 
