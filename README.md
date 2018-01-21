@@ -69,6 +69,7 @@ mvn spring-boot:run
 
 The base path for the endpoins is: **/api/v1**
   - For this application we have:  **/v1/users/register** 
+  - You can see more about the api at swagger(payload and return codes)
  
 ###### I prefer the approach  **post** to **/api/users** but was asked for this test that the endpoint should be **register**  
 
@@ -76,6 +77,7 @@ The base path for the endpoins is: **/api/v1**
     - **201 Created** - to **POST**.
     - I used some principles of **HATEOAS** for the API , when a new resource is created will be returned 
     **in header the link to the resource created**.
+    - 
 
 
 #### Tests
