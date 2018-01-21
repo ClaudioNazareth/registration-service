@@ -69,7 +69,7 @@ mvn spring-boot:run
 
 **Application port** :8080  
 
-#### Tests
+### Tests
 
 To run all unit and integration tests use the command bellow   
 
