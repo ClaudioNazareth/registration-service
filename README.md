@@ -69,6 +69,7 @@ mvn spring-boot:run
 
 The base path for the endpoins is: **/api/v1**
   - For this application we have:  **/v1/users/register** 
+  - **/health** - Application's status
   - You can see more about the api at swagger(payload and return codes)
  
 ###### I prefer the approach  **post** to **/api/users** but was asked for this test that the endpoint should be **register**  
