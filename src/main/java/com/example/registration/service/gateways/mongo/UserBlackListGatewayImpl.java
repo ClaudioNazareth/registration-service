@@ -10,6 +10,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
+/**
+ * Gateway to register and find for UserBlackList on MongoDb
+ *
+ * @author Claudio Nazareth
+ */
 @Component
 public class UserBlackListGatewayImpl implements UserBlackListGateway {
 

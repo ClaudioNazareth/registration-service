@@ -10,6 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
+/**
+ * Gateway to register and find for User on MongoDb
+ *
+ * @author Claudio Nazareth
+ */
 @Component
 public class UserGatewayImpl implements UserGateway {
 

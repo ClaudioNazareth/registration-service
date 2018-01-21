@@ -1,7 +1,9 @@
 package com.example.registration.service.controllers.jsons;
 
-import static com.example.registration.service.utils.RegexUtils.PASSWORD_REGEX;
-import static com.example.registration.service.utils.RegexUtils.USER_NAME_REGEX;
+import static com.example.registration.service.utils.ValidationUtils.PASSWORD_REGEX;
+import static com.example.registration.service.utils.ValidationUtils.PASSWORD_VALIDATION_MESSAGE;
+import static com.example.registration.service.utils.ValidationUtils.USER_NAME_REGEX;
+import static com.example.registration.service.utils.ValidationUtils.USER_NAME_VALIDATION_MESSAGE;
 
 import com.example.registration.service.domains.User;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -14,26 +16,21 @@ import javax.validation.constraints.Pattern;
 
 @ApiModel(
   value = "UserRequest",
-  description =
-      "Represents all user data that must be received by The rest api Rest to register an user"
+  description = "Represents all user data that must be received by the rest api to register an user"
 )
 public class UserRequest {
 
-  @NotNull(message = "username must not be null")
-  @Pattern(regexp = USER_NAME_REGEX, message = "The username must be alphanumerical, no spaces")
+  @NotNull
+  @Pattern(regexp = USER_NAME_REGEX, message = USER_NAME_VALIDATION_MESSAGE)
   @ApiModelProperty(value = "Username", dataType = "string", required = true)
   private String username;
 
-  @NotNull(message = "password must not be null")
-  @Pattern(
-    regexp = PASSWORD_REGEX,
-    message =
-        "The password must be at least four characters, at least one upper case character, at least one number"
-  )
+  @NotNull
+  @Pattern(regexp = PASSWORD_REGEX, message = PASSWORD_VALIDATION_MESSAGE)
   @ApiModelProperty(value = "Password", dataType = "string", required = true)
   private String password;
 
-  @NotNull(message = "dateOfBirth must not be null")
+  @NotNull
   @JsonDeserialize(using = LocalDateDeserializer.class)
   @ApiModelProperty(
     value = "User's date of birth",
@@ -43,7 +40,7 @@ public class UserRequest {
   )
   private LocalDate dateOfBirth;
 
-  @NotNull(message = "socialSecurityNumber must not be null")
+  @NotNull
   @ApiModelProperty(
     value = "Social Security Number",
     dataType = "Date",

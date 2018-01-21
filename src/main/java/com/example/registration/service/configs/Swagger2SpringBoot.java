@@ -12,6 +12,11 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger.web.UiConfiguration;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * Class Responsible for setting up Swagger2 and automatically mapping the rest APIs
+ *
+ * @author Claudio Nazareth
+ */
 @Configuration
 @EnableSwagger2
 public class Swagger2SpringBoot {
@@ -34,6 +39,6 @@ public class Swagger2SpringBoot {
   }
 
   private ApiInfo apiInfo() {
-    return new ApiInfoBuilder().title("User Register").version("1.0").build();
+    return new ApiInfoBuilder().title("Registration Service").version("1.0").build();
   }
 }

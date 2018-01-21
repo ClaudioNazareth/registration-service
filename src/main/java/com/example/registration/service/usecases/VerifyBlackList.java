@@ -6,6 +6,12 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+/**
+ * Use case that implements ExclusionService to offer validation of a user against a 'blacklist'.
+ * Blacklisted users fail the validation.
+ *
+ * @author Claudio Nazareth
+ */
 @Service
 public class VerifyBlackList implements ExclusionService {
 

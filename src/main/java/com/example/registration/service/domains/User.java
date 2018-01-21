@@ -1,6 +1,7 @@
 package com.example.registration.service.domains;
 
-import static com.example.registration.service.utils.RegexUtils.USER_NAME_REGEX;
+import static com.example.registration.service.utils.ValidationUtils.USER_NAME_REGEX;
+import static com.example.registration.service.utils.ValidationUtils.USER_NAME_VALIDATION_MESSAGE;
 
 import com.example.registration.service.utils.PasswordUtils;
 import java.time.LocalDate;
@@ -20,7 +21,7 @@ public class User {
   @NotNull
   @Field(value = "username")
   @Indexed(unique = true)
-  @Pattern(regexp = USER_NAME_REGEX, message = "${username.validation.message}")
+  @Pattern(regexp = USER_NAME_REGEX, message = USER_NAME_VALIDATION_MESSAGE)
   private String username;
 
   @NotNull

@@ -23,6 +23,7 @@ public class UserBlackList {
 
   @NotNull
   @Indexed(unique = true)
+  @Field(value = "socialSecurityNumber")
   private String socialSecurityNumber;
 
   public LocalDate getDateOfBirth() {

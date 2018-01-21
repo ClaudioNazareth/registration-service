@@ -1,7 +1,0 @@
-username:
-  validation:
-    message: 'The username must be alphanumerical, no spaces'
-
-password:
-  validation:
-    message: 'The password must be at least four characters, at least one upper case character, at least one number'

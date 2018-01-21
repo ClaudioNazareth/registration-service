@@ -8,6 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+/**
+ * Use case to register the user. Validate if the user is already registered or in blacklist
+ *
+ * @author Cladio Nazareth
+ */
 @Service
 public class RegisterUser {
 
@@ -23,7 +28,15 @@ public class RegisterUser {
     this.exclusionService = exclusionService;
   }
 
-  public User register(User user) {
+  /**
+   * Register the user on the system or throws RuntimeException
+   *
+   * @param user | to be registered
+   * @return A registered user
+   * @throws UserAlreadyExistsException | If the user is already registered
+   * @throws UserInBlackListException Z If the user is in the blacklist
+   */
+  public User register(User user) throws UserAlreadyExistsException, UserInBlackListException {
 
     if (isUserNotInTheBlackList(user)) {
 
