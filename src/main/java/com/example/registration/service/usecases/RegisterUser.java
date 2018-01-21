@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 /**
- * Use case to register the user. Validate if the user is already registered or in blacklist
+ * Use case to register the user. Validate if the user is already registered or in the blacklist
  *
- * @author Cladio Nazareth
+ * @author Claudio Nazareth
  */
 @Service
 public class RegisterUser {
@@ -29,12 +29,12 @@ public class RegisterUser {
   }
 
   /**
-   * Register the user on the system or throws RuntimeException
+   * Register the user or throws RuntimeException if it is in the black list or already registered
    *
    * @param user | to be registered
    * @return A registered user
    * @throws UserAlreadyExistsException | If the user is already registered
-   * @throws UserInBlackListException Z If the user is in the blacklist
+   * @throws UserInBlackListException | If the user is in the blacklist
    */
   public User register(User user) throws UserAlreadyExistsException, UserInBlackListException {
 

@@ -5,7 +5,7 @@ import java.util.Optional;
 
 /**
  * Gateway to register and find for users regardless of location, no matter whether it is a MongoDb
- * or Oracle database, text file or in the cloud. *
+ * or Oracle database, text file or in the cloud.
  *
  * @author Claudio Nazareth
  */
