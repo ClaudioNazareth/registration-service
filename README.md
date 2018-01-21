@@ -1,6 +1,6 @@
 # Registration Services
 
-Click the badges below to see build and coverage information
+Click in the badges below to see build and coverage information
 
 [![Build Status](https://travis-ci.org/ClaudioNazareth/registration-service.svg?branch=master)](https://travis-ci.org/ClaudioNazareth/registration-service)
 [![codecov](https://codecov.io/gh/ClaudioNazareth/registration-service/branch/master/graph/badge.svg)](https://codecov.io/gh/ClaudioNazareth/registration-service)
@@ -54,7 +54,7 @@ do not work very well yet with gradle. So for this test I chose maven.
 
 #### How to start the application and port   
 
-**Application port** :8080  
+Application port : **8080**  
  
 To start the application use the command bellow   
 
@@ -71,6 +71,12 @@ The base path for the endpoins is: **/api/v1**
   - For this application we have:  **/v1/users/register** 
  
 ###### I prefer the approach  **post** to **/api/users** but was asked for this test that the endpoint should be **register**  
+
+- For the resources exposed I have used the following:
+    - **201 Created** - to **POST**.
+    - I used some principles of **HATEOAS** for the API , when a new resource is created will be returned 
+    **in the header the link to the resource created**.
+
 
 #### Tests
 
@@ -93,16 +99,14 @@ You can also test the application online on swagger that was deployed on herokua
 
 - The application contains a built-in **MongoDB** database that is initialized along with application    
     - Port to access MongoDB: **12345**
-    
-- For the resources exposed I have used the following:
-    - **201 Created** - to **POST**.
-    - I used some principles of **HATEOAS** for the API , lik to create a new resources is returned 
-    **in the header the link to the resource created**.
+    - For this application we have 2 collections : **users** and **usersBlackList**
+    - When the application is started, a list of black list users is automatically loaded into MongoDB. 
+      See **data.json** in **/resources** for more details of the users in the black list
 
-
+  
 # Architecture, tools and frameworks used
 
-###Clean Architecture and Clean Code
+### Clean Architecture and Clean Code
 
 #### Clean Code
 
@@ -164,7 +168,9 @@ Here you can read more about [Swagger](https://swagger.io/)
 
 To **see and test** the APIs go to path **/swagger-ui.html** (ex: _http://localhost:8080/swagger-ui.html_)
 
-## UNDERTONW
+## UNDERTOW
+I chose Undertow as web ser for this test. Why undertow?
+
 Undertow is a web server designed to be used for both blocking and non-blocking tasks. 
 Some of its main features are:
 
@@ -178,6 +184,9 @@ See more at In the [undertow](http://undertow.io/)
 
 
 ## Fixture Factory
+
+I chose Fixture Factory to create fixtures for integrated and unit tests.
+
 Fixture Factory is a tool to help developers quickly build and organize fake objects for unit tests. 
 The key idea is to create specification limits of the data (templates) instead of hardcoded data. 
 Try using F-F, then you can focus on the behavior of your methods and we manage the data.
@@ -186,6 +195,9 @@ See more at [Fixture Factory](https://github.com/six2six/fixture-factory)
 
 
 ## MongoDB
+
+I chose MongoDB as database for this test. Why MongoDB?
+
 MongoDB is the database for today’s applications: innovative, fast time-to-market, globally scalable, 
 reliable, and inexpensive to operate. With MongoDB, you can build applications that were never
 possible with traditional relational databases.
