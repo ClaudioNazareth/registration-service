@@ -67,17 +67,17 @@ mvn spring-boot:run
 
 ###### I disabled the spring security basic authentication for this test.
 
-**The base path for the endpoins is**: /api/v1
+The base path for the endpoins is: **/api/v1**
   - For this application we have:  **/v1/users/register** 
  
-###### I prefer the approach  **post** to **/api/users** but was asked in the test that the endpoint should be **register**  
+###### I prefer the approach  **post** to **/api/users** but was asked for this test that the endpoint should be **register**  
 
 #### Tests
 
 To run all unit and integration tests use the command bellow   
 
 ```bash
-mvn verify
+mvn test
 ```  
 
 **To run mutation tests use the command bellow - MUST RUN AFTER mvn test or verify**  
@@ -87,15 +87,13 @@ mvn org.pitest:pitest-maven:mutationCoverage
 ```  
 ###### This will output an html report to target/pit-reports/YYYYMMDDHHMI.
 
-You can also test the application at : https://registration-service.herokuapp.com/swagger-ui.html
+You can also test the application online on swagger that was deployed on herokuapp : https://registration-service.herokuapp.com/swagger-ui.html
 
 #### Data base
 
-- The application contains a built-in ** MongoDB ** database that is initialized along with application    
+- The application contains a built-in **MongoDB** database that is initialized along with application    
     - Port to access MongoDB: **12345**
     
-- The log is generated at  **registration-service.log** file created at the root of the application.
-
 - For the resources exposed I have used the following:
     - **201 Created** - to **POST**.
     - I used some principles of **HATEOAS** for the API , lik to create a new resources is returned 
