@@ -75,7 +75,7 @@ The base path for the endpoins is: **/api/v1**
 - For the resources exposed I have used the following:
     - **201 Created** - to **POST**.
     - I used some principles of **HATEOAS** for the API , when a new resource is created will be returned 
-    **in the header the link to the resource created**.
+    **in header the link to the resource created**.
 
 
 #### Tests
@@ -101,7 +101,8 @@ You can also test the application online on swagger that was deployed on herokua
     - Port to access MongoDB: **12345**
     - For this application we have 2 collections : **users** and **usersBlackList**
     - When the application is started, a list of black list users is automatically loaded into MongoDB. 
-      See **data.json** in **/resources** for more details of the users in the black list
+      See **data.json** in **/resources** for more details of the users in the black list.
+    - When a user is registered the password is **encrypted** using spring security  
 
   
 # Architecture, tools and frameworks used
