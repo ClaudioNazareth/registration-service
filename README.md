@@ -52,13 +52,18 @@ I have some Gradle projects as you can see in my Github, but some services I've 
 do not work very well yet with gradle. So for this test I chose maven.
 
 
-##### Start and endpoints   
+#### How to start the application and port   
+
+**Application port** :8080  
  
 To start the application use the command bellow   
 
 ```bash
 mvn spring-boot:run
 ```
+
+
+#### Application endpoint
 
 ###### I disabled the spring security basic authentication for this test.
 
@@ -67,9 +72,7 @@ mvn spring-boot:run
  
 ###### I prefer the approach  **post** to **/api/users** but was asked in the test that the endpoint should be **register**  
 
-**Application port** :8080  
-
-### Tests
+#### Tests
 
 To run all unit and integration tests use the command bellow   
 
@@ -82,7 +85,7 @@ mvn verify
 ```bash
 mvn org.pitest:pitest-maven:mutationCoverage
 ```  
-**This will output an html report to target/pit-reports/YYYYMMDDHHMI.**
+###### This will output an html report to target/pit-reports/YYYYMMDDHHMI.
 
 You can also test the application at : https://registration-service.herokuapp.com/swagger-ui.html
 
@@ -91,21 +94,19 @@ You can also test the application at : https://registration-service.herokuapp.co
 - The application contains a built-in ** MongoDB ** database that is initialized along with application    
     - Port to access MongoDB: **12345**
     
-- To see the log, see the ** registration-service.log ** file created at the root of the application.
+- The log is generated at  **registration-service.log** file created at the root of the application.
 
 - For the resources exposed I have used the following:
-    - **200 OK** - to **GET** requests.
     - **201 Created** - to **POST**.
-    - **204 No Content** - to **PUT**, **PATCH**, e **DELETE** requests.
-    - I used some principles of ** HATEOAS ** for the API in which each resource has ** self link ** 
-     and for creation of new resources is returned ** in the header the link to the resource created **.
+    - I used some principles of **HATEOAS** for the API , lik to create a new resources is returned 
+    **in the header the link to the resource created**.
 
 
 # Architecture, tools and frameworks used
 
-##Clean Architecture and Clean Code
+###Clean Architecture and Clean Code
 
-### Clean Code
+#### Clean Code
 
 Clean Code is a development style that focuses on the **ease of writing, reading and maintaining code**.
 
@@ -125,7 +126,7 @@ For this project I've used some clean code principles like :
   * _Comment what is needed and only what is necessary. Codes are constantly modified, while comments rarely. 
     Thus, it is common for a comment to cease to have meaning, or worse, to pass on a false meaning after some time_.    
 
-### Clean Architecture
+#### Clean Architecture
 
 For this application I choose to use **Clean Architecture**
 
